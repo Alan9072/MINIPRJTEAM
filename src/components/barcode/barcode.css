@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+
+  
+  /* Scanner Header */
+  .scanner-container h2 {
+    padding: 20px;
+    text-align: center;
+    background: #ffffff;
+    color: rgb(27, 26, 26);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .scanner-container h3 {
+    color: rgb(27, 26, 26);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* Error Message */
+  .error-message {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffebee;
+    color: #d32f2f;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Video Container */
+  .scanner-box {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    position: relative;
+    border: 2px solid #4c749f;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fafafa;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  
+  /* Scan Result Container */
+  .scan-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 10px;
+  }
+  
+  .scan-result p {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    word-break: break-all;
+    font-family: monospace;
+    text-align: left;
+  }
+  
+  /* Button */
+  .scan-again-btn {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #6D9D39;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .scan-again-btn:hover {
+    background-color: #6D9D39;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .scanner-container {
+      width: 90%;
+    }
+  
+    .scanner-box {
+      height: auto;
+      max-height: 250px;
+    }
+  
+    .scan-result p {
+      max-height: 120px;
+      overflow-y: auto;
+    }
+  }
