@@ -23,6 +23,8 @@ function ScannerApp() {
   };
 
   return (
+    <div className="main">
+    <h1>Quick Scan, Precise Results</h1>
     <div className="scanner-container">
       <div className="scanner-option-wrapper">
         {/* Barcode Scanner Option */}
@@ -30,23 +32,10 @@ function ScannerApp() {
           className={`scanner-option ${activeScanner === "barcode" ? "active" : ""}`}
           onClick={() => handleScannerSelect("barcode")}
         >
-          <div className="scanner-title">70% Accuracy Barcode</div>
-          <div className="barcode-container">
-            <div className="barcode-box">
-              <div className="barcode-background">
-                <div className="barcode-lines">
-                  {Array(12)
-                    .fill()
-                    .map((_, i) => (
-                      <div key={i} className={`barcode-line ${i % 3 === 0 ? "green" : "black"}`}></div>
-                    ))}
-                </div>
-              </div>
-            </div>
-            <div className="scanner-frame">
-              <div className="scanner-line"></div>
-            </div>
-          </div>
+          <div className="scanner-title">Barcode Reader</div>
+          <div className="barcodeimg"></div>
+          <div className="greyTxt">Quick & Easy, but Less Accurate</div>
+          
         </div>
 
         {/* OCR Scanner Option */}
@@ -54,21 +43,13 @@ function ScannerApp() {
           className={`scanner-option ${activeScanner === "ocr" ? "active" : ""}`}
           onClick={() => handleScannerSelect("ocr")}
         >
-          <div className="scanner-title">90% Accuracy OCR</div>
-          <div className="ocr-container">
-            <div className="ocr-box">
-              <div className="ocr-text">OCR</div>
-              <div className="ocr-frame">
-                <div className="corner top-left"></div>
-                <div className="corner top-right"></div>
-                <div className="corner bottom-left"></div>
-                <div className="corner bottom-right"></div>
-              </div>
-            </div>
-          </div>
+          <div className="scanner-title">OCR Scanner</div>
+          <div className="ocrimg"></div>
+          <div className="greyTxt">Slower but More Accurate (90%)</div>
         </div>
 
       </div>
+    </div>
     </div>
   );
 }

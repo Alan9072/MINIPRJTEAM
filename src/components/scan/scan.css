@@ -39,7 +39,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.234);
 }
 
 .scanner-option:hover {
@@ -163,4 +163,47 @@ body {
     width: 8rem;
     height: 4.5rem;
   }
+}
+
+.barcodeimg{
+  width: 2cm;
+  height: 2cm;
+  background-color: #ef444400;
+  background-image: url("./images/barcode_1550324.png");
+  background-position: center;
+  background-size: cover;
+  
+}
+.ocrimg{
+  width: 2cm;
+  height: 2cm;
+  background-color: #ef444400;
+  background-image: url("./images/ocr_5262072.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.greyTxt{
+  color: rgb(94, 94, 94);
+  font-size: x-small;
+  background-color: rgb(232, 232, 232);
+  padding: 4px 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.scanner-title{
+  font-weight: 400;
+}
+
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+.main>h1{
+  font-weight: 200;
 }

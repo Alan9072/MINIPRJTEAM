@@ -104,9 +104,7 @@ body {
   
   /* Responsive */
   @media (max-width: 480px) {
-    .scanner-container {
-      width: 90%;
-    }
+    
   
     .scanner-box {
       height: auto;

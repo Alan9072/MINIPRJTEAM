@@ -433,3 +433,10 @@ body {
       width: 100% !important;
   }
 }
+.auth-inner>div{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

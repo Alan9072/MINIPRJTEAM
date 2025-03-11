@@ -244,3 +244,6 @@ body {
 .input-field{
   padding: 10px 10px !important;
 }
+.form-group p{
+  height: 1cm;
+}
