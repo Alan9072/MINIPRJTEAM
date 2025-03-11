@@ -1,12 +1,15 @@
 import { useState, useEffect, useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { AiOutlineSend } from "react-icons/ai";
 import "./askai.css";
+
 
 const AskAI = () => {
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState("");
     const [image, setImage] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [fileUploaded, setFileUploaded] = useState(false);
     const chatEndRef = useRef(null);
 
     useEffect(() => {
@@ -47,6 +50,7 @@ const AskAI = () => {
         setLoading(false);
         setUserInput("");
         setImage(null);
+        setFileUploaded(false); 
     };
 
     const convertImageToBase64 = (file) => {
@@ -56,26 +60,21 @@ const AskAI = () => {
             reader.onload = () => resolve(reader.result);
         });
     };
+    const handleFileUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setImage(file);
+            setFileUploaded(true); // Change button text to "File Added"
+        }
+    };
 
     return (
         <div className="chat-container">
      <h2
-    style={{
-        textAlign: "center",
-        color: "white",
-        backgroundColor: "#4a7023", // Darker green for better contrast
-        padding: "15px",
-        borderRadius: "8px",
-        fontSize: "22px",
-        fontWeight: "bold",
-        letterSpacing: "1px",
-        textTransform: "uppercase",
-        boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.2)",
-    }}
 >
      HealthSnap Bot 
 </h2>
-            <h2 className="title">What can I help with?</h2>
+            <p className="title">What can I help with?</p>
 
             <div className="chat-box">
                 {messages.map((msg, index) => (
@@ -95,21 +94,18 @@ const AskAI = () => {
                     placeholder="Type a message..."
                     disabled={loading}
                 />
+                <div className="together">
                 <label className="upload-button">
-                    <span className="file-label">Add File</span>
+                    <span className="file-label">{fileUploaded ? "File Added" : "Add File"}</span>
                     <input
                         type="file"
                         accept="image/*"
-                        onChange={(e) => setImage(e.target.files[0])}
+                        onChange={handleFileUpload}
                         className="hidden-file-input"
                     />
                 </label>
-                <img 
-                    src="/images/send.png"  
-                    alt="Send" 
-                    className={`arrow-icon ${loading ? "loading" : ""}`} 
-                    onClick={fetchAIResponse} 
-                />
+                <AiOutlineSend color="#6D9D39" style={{marginRight:"10px"}} size={30} onClick={fetchAIResponse} />
+                </div>
             </div>
         </div>
     );
